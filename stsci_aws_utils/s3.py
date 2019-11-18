@@ -183,7 +183,7 @@ class AsyncConcurrentS3Client:
             if md5 == expected_md5:
                 break
         if md5 != expected_md5:
-            raise aiohttp.ClientError("Failed MD5 checksum verification")
+          _LOGGER.warning("Failed MD5 checksum verification")
 
         content.seek(0)
         return content
